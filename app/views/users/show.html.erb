@@ -1,0 +1,6 @@
+<h1> Profile </h1>
+<h1><%= @user.name %></h1>
+<h5><%= @user.email%></h5>
+<h5><%= @user.mobile_number%></h5>
+<h5><%= @user.gender%></h5>
+<%= image_tag url_for(:controller => "/users", :action => "show_image", :id => @user.id) %>

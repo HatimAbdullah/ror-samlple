@@ -1,0 +1,9 @@
+<% if @users %>
+  <% @users.each do |user| %>
+    <%= user.name %><br/>
+    <%= user.email %><br/>
+    <%=button_to 'Delete', {:controller => :users, :action => 'delete_user', :id => user.id}, :method => :delete%>
+  <% end %>
+<% else %> 
+<p> nothing... a cold void </p>
+<% end %>

@@ -1,0 +1,28 @@
+<h2>Edit user </h2>
+<%= form_with url: '/admin_edit', method: :put,local: true do |f| %>
+    <%= f.number_field :id, hidden: true, value: @user.id, autocomplete: "name" %>
+    <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, value: @user.name, autocomplete: "name" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, value: @user.email, autocomplete: "email" %>
+  </div>
+
+<div class="field">
+  <%= f.label :mobile_number %><br />
+  <%= f.text_field :mobile_number, value: @user.mobile_number, autocomplete: "mobile number" %>
+</div>
+
+<div class="field">
+<p> current gender is <%= @user.gender %> </p>
+<%= f.label :gender %><br />
+<%= f.radio_button :gender, 'MALE' %> male<br />
+<%= f.radio_button :gender, 'FEMALE' %> female<br />
+<%= f.radio_button :gender, 'ANY' %> any<br />
+</div>
+
+    <%= f.submit 'edit' %>
+ <% end %>
